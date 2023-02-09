@@ -1,1 +1,6 @@
-[{"codigo":"ED01","titulo":"VRTX Modelo 5","descripcion":"Simulador de soldadura","img":2500,"precio":"Imagen","stock":9,"id":1},{"codigo":"ED02","titulo":"Invertec 275TP","descripcion":"Soldadora MIG/TIG","img":"Imagen","precio":500,"stock":5,"id":2}]
+[{"codigo":"ED01","titulo":"VRTX Modelo 5","descripcion":"Simulador de soldadura","img":2500,"precio":"Imagen","stock":9,"id":1},
+{"codigo":"ED02","titulo":"Invertec 275TP","descripcion":"Soldadora MIG/TIG","img":"Imagen","precio":500,"stock":5,"id":2},
+{"codigo":"ED03","titulo":"Invertec 300TP","descripcion":"Soldadora MIG/TIG","img":"Imagen","precio":700,"stock":8,"id":3},
+{"codigo":"ED04","titulo":"Vantage 322","descripcion":"Motosoldadora","img":"Imagen","precio":1500,"stock":13,"id":4},
+{"codigo":"ED05","titulo":"Maveric 400TPX","descripcion":"Motosoldadora","img":"Imagen","precio":2500,"stock":5,"id":5},
+{"codigo":"ED06","titulo":"Invertec 250i","descripcion":"Soldadora MIG/TIG","img":"Imagen","precio":850,"stock":9,"id":6}]

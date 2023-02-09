@@ -1,4 +1,5 @@
-const fs = require("fs")
+//const fs = require("fs")
+import fs from "fs"
 
 class ProductManager{
     constructor(path){
@@ -30,12 +31,28 @@ class ProductManager{
     }
 
     getProducts(){
-        this.productos.forEach((productos) => console.log(productos.codigo + "-" + productos.descripcion + "-" + productos.precio));
+        if (fs.existsSync(this.path)) {
+            let archivo = fs.readFileSync(this.path)
+            let contenido = JSON.parse(archivo)
+            return contenido
+        }
+        //this.productos.forEach((productos) => (productos.codigo + "-" + productos.descripcion + "-" + productos.precio));
     }
 
     getProductById(cod){
-        const artBuscado = this.productos.filter((el) => el.id === cod).map(((el) => el.descripcion + " - "+ "Cantidad= " + el.stock))
-        console.log(artBuscado)
+        if (fs.existsSync(this.path)) {
+            let Producto = fs.readFileSync(this.path)
+            let producto = JSON.parse(Producto)
+            if (producto.some(products => products.id == cod)) {
+                let artBuscado = producto.filter(products => products.id == cod)
+                return artBuscado;
+            }
+            else {
+                return ("El producto no existe")
+            }
+        }
+        //const artBuscado = this.productos.filter((el) => el.id === cod).map(((el) => el.descripcion + " - "+ "Cantidad= " + el.stock))
+        //return artBuscado
     }
 
 
@@ -74,9 +91,9 @@ class ProductManager{
 }
 
 
-const producto = new ProductManager("./data.json")
+export const producto = new ProductManager("./src/data.json")
 
-producto.addProductos({
+/*producto.addProductos({
     codigo: "ED01",
     titulo: "VRTX Modelo 2",
     descripcion: "Simulador de soldadura",
@@ -123,4 +140,4 @@ producto.updateProduct({
 
 producto.getProducts()
 
-producto.getProductById(2)
+producto.getProductById(2)*/

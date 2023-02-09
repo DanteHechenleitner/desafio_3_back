@@ -3,6 +3,8 @@ import { producto } from "./productManager.js";
 const app = express();
 app.use(express.urlencoded({ extended: true }));
 
+const frase = "Hola Mundo"
+
 app.get('/products', async (req, res) => {
     let totalProducts = await producto.getProducts();
     let limit = parseInt(req.query.limit)
@@ -15,8 +17,9 @@ app.get('/products', async (req, res) => {
         }
         res.send(arraylimit)
     }
-     res.send(totalProducts);
+    res.send(totalProducts);
 
+    
 });
 
 app.get('/products/:productId', async (req, res) => {
@@ -27,5 +30,5 @@ app.get('/products/:productId', async (req, res) => {
 
 const port = 8080;
 app.listen(port, () => {
-    console.log('Server listening at Port: ', port)
+    console.log('Servidor escuchando desde el puerto: ', port)
 });

@@ -1,10 +1,10 @@
-{
+{ "type":"module" ,
   "name": "desafio_3",
   "version": "1.0.0",
   "description": "",
-  "main": "desafio_3.js",
+  "main": "app.js",
   "scripts": {
-    "start": "nodemon index.js",
+    "start": "nodemon src/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
